@@ -1,0 +1,3 @@
+String com os dados enviados:
+sensor_id:8#type:atmospheric_temperature#value:21.60#unit:celsius#time:2470030
+time:	2470030

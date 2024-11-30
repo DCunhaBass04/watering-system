@@ -1,0 +1,16 @@
+DECLARE
+    fatoresParcela SYS_REFCURSOR;
+    fatoresParcela_designacaoParcela aplicacaofitofarmaco.designacaoParcela%TYPE;
+    fatoresParcela_designacaoFatorProducao aplicacaofitofarmaco.designacaoFatorProducao%TYPE;
+    fatoresParcela_quantidade aplicacaofitofarmaco.quantidade%TYPE;
+    fatoresParcela_data aplicacaofitofarmaco.data%TYPE;
+BEGIN
+    fatoresParcela := ObterFatorParcela('Lameiro da ponte', DATE '2000-01-01', DATE '2024-01-01');
+    LOOP
+        FETCH fatoresParcela INTO fatoresParcela_designacaoParcela, fatoresParcela_designacaoFatorProducao, fatoresParcela_quantidade, fatoresParcela_data;
+        EXIT WHEN fatoresParcela%NOTFOUND;
+        
+        dbms_output.put_line(fatoresParcela_designacaoParcela || ' | ' || fatoresParcela_designacaoFatorProducao || ' | ' || fatoresParcela_quantidade || ' | ' || fatoresParcela_data);
+    END LOOP;
+    CLOSE fatoresParcela;
+END;

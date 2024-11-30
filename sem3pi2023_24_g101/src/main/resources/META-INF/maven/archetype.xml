@@ -1,0 +1,9 @@
+<archetype>
+  <id>sem3pi2023_24_g101</id>
+  <sources>
+    <source>src/main/java/App.java</source>
+  </sources>
+  <testSources>
+    <source>src/test/java/AppTest.java</source>
+  </testSources>
+</archetype>

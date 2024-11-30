@@ -1,0 +1,1 @@
+Sensor *configurarComponente(const char *diretorio)

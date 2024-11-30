@@ -1,0 +1,9 @@
+Array antes de ler os valores:
+5	2	5	6	0	
+Array depois de ler os valores:
+0	0	0	6	0	
+Array com os valores copiados:
+5	2	5	0	0	
+
+Valor Read:	3
+Valor Write:	4

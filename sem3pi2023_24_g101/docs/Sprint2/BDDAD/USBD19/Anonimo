@@ -1,0 +1,17 @@
+DECLARE
+    aplicacoesFator SYS_REFCURSOR;
+    aplicacoesFator_data aplicacaofitofarmaco.data%TYPE;
+    aplicacoesFator_designacaoFatorProducao fatorproducao.designacaoFatorProducao%TYPE;
+    aplicacoesFator_aplicacao fatorproducao.aplicacao%TYPE;
+    aplicacoesFator_designacaoParcela aplicacaofitofarmaco.designacaoParcela%TYPE;
+    aplicacoesFator_variedadeCultura aplicacaofitofarmaco.variedadeCultura%TYPE;
+BEGIN
+    aplicacoesFator := ObterAolicacoesFator(DATE '2000-01-01', DATE '2024-01-01');
+    LOOP
+        FETCH aplicacoesFator INTO aplicacoesFator_data, aplicacoesFator_designacaoFatorProducao, aplicacoesFator_aplicacao, aplicacoesFator_designacaoParcela, aplicacoesFator_variedadeCultura;
+        EXIT WHEN aplicacoesFator%NOTFOUND;
+        
+        dbms_output.put_line(aplicacoesFator_data || ' | ' || aplicacoesFator_designacaoFatorProducao || ' | ' || aplicacoesFator_aplicacao || ' | ' || aplicacoesFator_designacaoParcela || ' | ' || aplicacoesFator_variedadeCultura);
+    END LOOP;
+    CLOSE aplicacoesFator;
+END;

@@ -1,0 +1,9 @@
+Buffer Circular antes de inserção de um valor:
+0   0   0
+
+read = 0    write = 2    value = 5
+
+Buffer Circular depois de inserção de um valor:
+0   0   5
+
+read = 1   write = 0

@@ -1,0 +1,7 @@
+Array antes de inserir o valor:
+0	0	0	0	
+Array depois de inserir o valor:
+4	0	0	0	
+
+Valor Read:	0
+Valor Write:	1

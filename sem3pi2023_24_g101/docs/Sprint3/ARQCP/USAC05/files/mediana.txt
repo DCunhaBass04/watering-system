@@ -1,0 +1,4 @@
+Array:
+4	2	6	3	8	1	
+
+Mediana: 4

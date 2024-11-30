@@ -1,0 +1,16 @@
+DECLARE
+    produtosParcela SYS_REFCURSOR;
+    produtosParcela_designacaoParcela culturaParcela.designacaoParcela%TYPE;
+    produtosParcela_variedadeCultura culturaParcela.variedadeCultura%TYPE;
+    produtosParcela_produtoAgricola colheita.produtoAgricola%TYPE;
+    produtosParcela_data colheita.data%TYPE;
+BEGIN
+    produtosParcela := obterProdutosParcela('Horta nova', DATE '2000-01-01', DATE '2024-01-01');
+    LOOP
+        FETCH produtosParcela INTO produtosParcela_designacaoParcela, produtosParcela_variedadeCultura, produtosParcela_produtoAgricola, produtosParcela_data;
+        EXIT WHEN produtosParcela%NOTFOUND;
+        
+        dbms_output.put_line(produtosParcela_designacaoParcela || ' | ' || produtosParcela_variedadeCultura || ' | ' || produtosParcela_produtoAgricola || ' | ' || produtosParcela_data);
+    END LOOP;
+    CLOSE produtosParcela;
+END;
